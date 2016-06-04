@@ -1,0 +1,34 @@
+<?php
+
+class CPage {
+	
+// Get content	
+public function getContentPage($db,$url,$fi,$acronym){
+$sql = "
+SELECT *
+FROM Content
+WHERE
+  type = 'page' AND
+  url = ? AND
+  published <= NOW();
+";
+$res = $db->ExecuteSelectQueryAndFetchAll($sql, array($url));
+
+if(isset($res[0])) {
+  $c = $res[0];
+  
+}
+else {
+  die('Misslyckades: det finns inget innehåll.');
+}
+
+ // Sanitize content before using it.
+$title  = htmlentities($c->title, null, 'UTF-8');
+$data   = $fi->doFilter(htmlentities($c->data, null, 'UTF-8'), $c->filter);
+//Editlink
+$editLink = $acronym ? "<a href='edit.php?id={$c->id}'>Uppdatera sidan</a>" : null;
+$d=array($title,$data,$editLink);
+return $d;
+}
+
+}

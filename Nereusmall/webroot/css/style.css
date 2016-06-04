@@ -1,0 +1,171 @@
+
+/**
+ * General elements
+ */
+body {
+  color: #333;
+  font: 100.01%/1.375 arial, sans-serif;
+}
+
+/**
+ * Typography
+ */
+h1 {
+  border-bottom: 1px solid #ccc;
+  text-transform: uppercase;
+}
+
+/**
+ * Layout of the main page elements 
+ */
+#wrapper {
+  margin: 0 auto;
+  width: 980px; 
+  padding: 10px;
+  
+}
+
+
+/**
+ * Layout for header
+ */
+#header {
+  position: relative;
+  margin-bottom: 40px;
+  height: 80px;
+}
+
+.sitetitle {
+  position: absolute;
+  top: 10px;
+  left: 350px;
+  font-size: 48px;
+  color: #000DFF;
+}
+
+.siteslogan {
+  position: absolute;
+  top: 75px;
+  left: 250px;
+  font-style: italic;
+  color: #666;
+}
+
+
+/**
+ * Layout for navigation bar / menu
+ */
+#navbar {
+	
+  margin: 4em 4em 4em 0em ;
+}
+
+#navbar .nb-plain li{
+	display:inline;
+	padding:30px;
+}
+
+#navbar .nb-plain li a{
+	text-decoration:none;
+	font-weight:bold;
+	color: #000DFF;
+}
+
+#navbar .nb-plain li.selected {
+	border:5px solid #FF0000;;
+	border-radius: 100px;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	 background:#E3E3ED;
+}
+
+ul {
+	padding:10px;
+	/*background:yellow;*/
+}
+
+/**
+ * Layout for main
+ */
+#main {
+  min-height: 20em;
+}
+
+.readable {
+  width: 80%;
+  padding-right: 1em;
+  border:5px solid #FF0000;
+  border-radius: 20px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+  overflow:auto;
+  padding:0em 2em;
+  background:#E3E3ED;
+}
+
+.bloggpost a {
+	padding: 0px 3px;
+}
+
+/**
+ * Layout for footer
+ */
+#footer {
+  margin-top: 40px;
+  border-top: 1px solid #ccc;
+  padding-top: 15px;
+}
+
+.sitefooter {
+  color: #666;
+}
+
+
+/**
+ * Byline
+ */
+.byline {
+  border-top: 1px dashed black;
+  font-style: italic;
+  
+}
+
+.byline p{
+	margin-left: 11em;
+	margin-top: 4em;
+}
+
+
+/**
+ * Figure
+ */
+figure {
+
+}
+
+figcaption {
+
+}
+
+figure.right {
+  float: right;
+}
+
+/**
+*	Links
+*/
+a:link{
+	color:#000DFF;	
+}
+
+a:visited{
+	color:#FF0000;	
+}
+
+a:hover {
+	color:#CCCCCC;	
+}
+
+a:active{
+	color:#E3E3ED;	
+}

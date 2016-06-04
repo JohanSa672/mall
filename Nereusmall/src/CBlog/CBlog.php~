@@ -1,0 +1,37 @@
+<?php
+
+class CBlog {
+	
+public function getContentBlog($db,$slug){
+	// Get content
+	$slugSql = $slug ? 'slug = ?' : '1';
+	$sql = "
+	SELECT *
+	FROM Content
+	WHERE
+	type = 'post' AND
+	$slugSql AND
+ 	published <= NOW()
+ 	ORDER BY updated DESC
+ 	;
+ 	";
+ 	$res = $db->ExecuteSelectQueryAndFetchAll($sql, array($slug));
+ 	return $res;
+}
+	
+public function getSanitize($c,$slug,$acronym,$nereus,$fi){
+	
+    // Sanitize content before using it.
+    $title  = htmlentities($c->title, null, 'UTF-8');
+    $data   = $fi->doFilter(htmlentities($c->data, null, 'UTF-8'), $c->filter);
+
+    if($slug) {
+      $nereus['title'] = "$title | " . $nereus['title'];
+    }
+    $editLink = $acronym ? "<a href='edit.php?id={$c->id}'>Uppdatera posten</a>" : null;
+
+$e=array($title,$data,$nereus,$editLink);
+return $e;
+
+}
+}

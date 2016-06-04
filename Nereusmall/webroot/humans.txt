@@ -1,0 +1,1 @@
+Nereus is a PHP-boilerplate/framework for small websites. Nereus was built by Johan Salomonsson.
